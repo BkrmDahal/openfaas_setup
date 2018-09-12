@@ -1,0 +1,20 @@
+provider:
+  name: faas
+  gateway: http://127.0.0.1:8080
+
+functions:
+  articletag:
+    lang: python3-flask-deeplearning
+    handler: ./articletags
+    image: articletag:latest
+    labels:
+        "com.openfaas.scale.min": "1"
+        "com.openfaas.scale.max": "3"
+        
+  summarizer:
+    lang: python3-sum
+    handler: ./summarizer
+    image: summarizer:latest
+    labels:
+        "com.openfaas.scale.min": "1"
+        "com.openfaas.scale.max": "3"

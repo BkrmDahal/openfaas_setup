@@ -1,0 +1,7 @@
+numpy
+summa
+gensim
+sumy
+flask
+gevent
+nltk
